@@ -54,8 +54,19 @@ app.post('/api/unsubscribe', (req, res) => {
 });
 
 app.post('/api/send_push_message', (req, res) => {
+    // TODO: adjust according your needs
     const msg = req.body.msg;
     const title = req.body.title;
+
+    /**
+     * TODO: add code here to save the pushed message to your
+     * own backend alerts collection
+     */
+    // const POST_TO_ALERTS = "";
+    // fetch(POST_TO_ALERTS, {
+    //     method: "POST",
+    //     body: {}
+    // }).then().catch();
 
     _subscriptions.forEach((sub) => {
         const payload = JSON.stringify({

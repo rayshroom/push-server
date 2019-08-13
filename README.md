@@ -1,3 +1,5 @@
+###Please report any issues to team A
+
 **To set up the keys**, do the following in your terminal/powershell at root
 
 ```
@@ -16,3 +18,16 @@ CONTACT_EMAIL=aValidMailtoLink
 Remember there are no spaces around the `=` sign and any content you put after the `=` sign
 
 The `.env` file will be handled by npm package `dotenv`, which is included in `package.json`
+
+
+###Subscribe with service worker
+
+copy(or merge) the content of `addToRegister.js` file to where you registered your service worker.
+
+After you add the contents, change `vapidPublicKey` to the one you just generated, host the service somewhere, and change `API_URL` to the hosting address.
+
+-----------------------
+
+Append the content of `addToServiceWorker.js` to your actual service worker.
+
+Please modify the `/api/send_push_message` accordingly to satisfy your needs.
