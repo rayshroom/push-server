@@ -31,3 +31,5 @@ After you add the contents, change `vapidPublicKey` to the one you just generate
 Append the content of `addToServiceWorker.js` to your actual service worker.
 
 Please modify the `/api/send_push_message` accordingly to satisfy your needs.
+
+Uncomment the first 2 lines after push if you are generating `service-worker.js` using `Workbox`
