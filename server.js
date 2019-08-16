@@ -8,7 +8,7 @@ const fetch = require('node-fetch');
 
 require('dotenv').config('conf.env');
 
-const port = (process.env.PORT || 7260);
+const port = (process.env.PORT || 8080);
 const app = express();
 
 app.use(cors());
@@ -75,7 +75,7 @@ app.post('/api/send_push_message', (req, res) => {
                 "targetCountry": "Denmark",
                 "targetRegion": "Aarhus",
                 "visibility": [],
-                "content": `<h3>${msh}</h3>`
+                "content": `<h3>${msg}</h3>`
             }
         }).then(data => console.log(data)).catch(e => console.log(e));
     } catch(e) { console.log(e)};
