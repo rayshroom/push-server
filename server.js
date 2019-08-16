@@ -73,7 +73,8 @@ app.post('/api/send_push_message', (req, res) => {
             msg: msg,
             title: title
         });
-
+        console.log('*******Ready to send', payload);
+        console.log('---- to subs', sub);
         webpush.sendNotification(sub, payload).catch(error => {
             if (error.statusCode === 410) {
                 console.log("Given subscription is no longer active");
