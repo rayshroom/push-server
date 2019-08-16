@@ -62,11 +62,22 @@ app.post('/api/send_push_message', (req, res) => {
      * TODO: add code here to save the pushed message to your
      * own backend alerts collection
      */
-    // const POST_TO_ALERTS = "";
-    // fetch(POST_TO_ALERTS, {
-    //     method: "POST",
-    //     body: {}
-    // }).then().catch();
+    const POST_TO_ALERTS = "https://moves-backend-a.herokuapp.com/api/announcement/add";
+    try {
+        fetch(POST_TO_ALERTS, {
+            method: "POST",
+            body: {
+                "shortName": title,
+                "category": "Alert",
+                "dateCreated": "2019-08-16T09:44:49+0000",
+                "dateExpired": "2019-10-16T09:44:49+0000",
+                "targetCountry": "Denmark",
+                "targetRegion": "Aarhus",
+                "visibility": [],
+                "content": `<h3>${msh}</h3>`
+            }
+        }).then(data => console.log(data)).catch(e => console.log(e));
+    } catch(e) { console.log(e)};
 
     _subscriptions.forEach((sub) => {
         const payload = JSON.stringify({
