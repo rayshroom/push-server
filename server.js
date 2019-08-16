@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 const webpush = require('web-push');
+const fetch = require('node-fetch');
 
 require('dotenv').config('conf.env');
 
